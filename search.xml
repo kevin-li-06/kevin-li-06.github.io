@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>myBlog</title>
+      <link href="/2018/03/31/myBlog/"/>
+      <url>/2018/03/31/myBlog/</url>
+      <content type="html"><![CDATA[<p>这是我第一篇博客</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> life </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>fix-setp-up-hexo-issue</title>
       <link href="/2018/02/28/fix-setp-up-hexo-issue/"/>
       <url>/2018/02/28/fix-setp-up-hexo-issue/</url>
