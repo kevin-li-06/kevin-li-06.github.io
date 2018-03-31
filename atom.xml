@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kevin-li-06.github.io/"/>
-  <updated>2018-03-31T14:03:30.360Z</updated>
+  <updated>2018-02-28T06:39:32.581Z</updated>
   <id>http://kevin-li-06.github.io/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://kevin-li-06.github.io/2018/03/31/name/"/>
-    <id>http://kevin-li-06.github.io/2018/03/31/name/</id>
-    <published>2018-03-31T13:51:20.603Z</published>
-    <updated>2018-03-31T14:03:30.360Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>fix-setp-up-hexo-issue</title>
