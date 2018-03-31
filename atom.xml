@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kevin-li-06.github.io/"/>
-  <updated>2018-03-31T14:50:06.890Z</updated>
+  <updated>2018-03-31T15:20:22.942Z</updated>
   <id>http://kevin-li-06.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>myBlog</title>
-    <link href="http://kevin-li-06.github.io/2018/03/31/myBlog/"/>
-    <id>http://kevin-li-06.github.io/2018/03/31/myBlog/</id>
+    <link href="http://kevin-li-06.github.io/2018/03/31/Blog/"/>
+    <id>http://kevin-li-06.github.io/2018/03/31/Blog/</id>
     <published>2018-03-31T14:47:02.000Z</published>
-    <updated>2018-03-31T14:50:06.890Z</updated>
+    <updated>2018-03-31T15:20:22.942Z</updated>
     
     <content type="html"><![CDATA[<p>这是我第一篇博客</p>]]></content>
     
@@ -42,10 +42,10 @@
   
   <entry>
     <title>fix-setp-up-hexo-issue</title>
-    <link href="http://kevin-li-06.github.io/2018/02/28/fix-setp-up-hexo-issue/"/>
-    <id>http://kevin-li-06.github.io/2018/02/28/fix-setp-up-hexo-issue/</id>
+    <link href="http://kevin-li-06.github.io/2018/02/28/Issues/"/>
+    <id>http://kevin-li-06.github.io/2018/02/28/Issues/</id>
     <published>2018-02-28T06:36:05.000Z</published>
-    <updated>2018-02-28T06:39:32.581Z</updated>
+    <updated>2018-03-31T15:19:38.225Z</updated>
     
     <content type="html"><![CDATA[<ul><li>npm install hexo-generator-archive –save</li><li>npm install hexo-deployer-git –save</li></ul>]]></content>
     
@@ -63,34 +63,14 @@
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>resume</title>
-    <link href="http://kevin-li-06.github.io/2018/02/28/resume/"/>
-    <id>http://kevin-li-06.github.io/2018/02/28/resume/</id>
-    <published>2018-02-28T01:28:41.000Z</published>
-    <updated>2018-02-28T01:29:49.972Z</updated>
-    
-    <content type="html"><![CDATA[<p>Hello ,Welcome my technical blog</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Hello ,Welcome my technical blog&lt;/p&gt;
-
-      
-    
-    </summary>
-    
+      <category term="issues" scheme="http://kevin-li-06.github.io/tags/issues/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://kevin-li-06.github.io/2018/02/28/hello-world/"/>
-    <id>http://kevin-li-06.github.io/2018/02/28/hello-world/</id>
+    <link href="http://kevin-li-06.github.io/2018/02/28/Hexo/"/>
+    <id>http://kevin-li-06.github.io/2018/02/28/Hexo/</id>
     <published>2018-02-28T00:59:12.300Z</published>
     <updated>2018-02-28T00:59:12.301Z</updated>
     

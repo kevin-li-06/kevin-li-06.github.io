@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://kevin-li-06.github.io/2018/03/31/myBlog/</loc>
+    <loc>http://kevin-li-06.github.io/2018/03/31/Blog/</loc>
     
-    <lastmod>2018-03-31T14:50:06.890Z</lastmod>
+    <lastmod>2018-03-31T15:20:22.942Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://kevin-li-06.github.io/2018/02/28/Issues/</loc>
+    
+    <lastmod>2018-03-31T15:19:38.225Z</lastmod>
     
   </url>
   
@@ -37,21 +44,7 @@
   </url>
   
   <url>
-    <loc>http://kevin-li-06.github.io/2018/02/28/fix-setp-up-hexo-issue/</loc>
-    
-    <lastmod>2018-02-28T06:39:32.581Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://kevin-li-06.github.io/2018/02/28/resume/</loc>
-    
-    <lastmod>2018-02-28T01:29:49.972Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://kevin-li-06.github.io/2018/02/28/hello-world/</loc>
+    <loc>http://kevin-li-06.github.io/2018/02/28/Hexo/</loc>
     
     <lastmod>2018-02-28T00:59:12.301Z</lastmod>
     
