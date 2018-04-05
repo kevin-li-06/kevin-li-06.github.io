@@ -18,36 +18,6 @@
     </entry>
     
     <entry>
-      <title>Blog</title>
-      <link href="/2018/03/31/Blog/"/>
-      <url>/2018/03/31/Blog/</url>
-      <content type="html"><![CDATA[<p>这是我第一篇博客</p>]]></content>
-      
-      
-        <tags>
-            
-            <tag> life </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Issues</title>
-      <link href="/2018/02/28/Issues/"/>
-      <url>/2018/02/28/Issues/</url>
-      <content type="html"><![CDATA[<ul><li>npm install hexo-generator-archive –save</li><li>npm install hexo-deployer-git –save</li></ul>]]></content>
-      
-      
-        <tags>
-            
-            <tag> issues </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Hexo</title>
       <link href="/2018/02/28/Hexo/"/>
       <url>/2018/02/28/Hexo/</url>

@@ -41,57 +41,6 @@
   </entry>
   
   <entry>
-    <title>Blog</title>
-    <link href="http://kevin-li-06.github.io/2018/03/31/Blog/"/>
-    <id>http://kevin-li-06.github.io/2018/03/31/Blog/</id>
-    <published>2018-03-31T14:47:02.000Z</published>
-    <updated>2018-03-31T15:21:36.657Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是我第一篇博客</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这是我第一篇博客&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="life" scheme="http://kevin-li-06.github.io/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Issues</title>
-    <link href="http://kevin-li-06.github.io/2018/02/28/Issues/"/>
-    <id>http://kevin-li-06.github.io/2018/02/28/Issues/</id>
-    <published>2018-02-28T06:36:05.000Z</published>
-    <updated>2018-03-31T15:21:23.739Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>npm install hexo-generator-archive –save</li><li>npm install hexo-deployer-git –save</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;npm install hexo-generator-archive –save&lt;/li&gt;
-&lt;li&gt;npm install hexo-deployer-git –save&lt;/li&gt;
-&lt;/ul&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="issues" scheme="http://kevin-li-06.github.io/tags/issues/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Hexo</title>
     <link href="http://kevin-li-06.github.io/2018/02/28/Hexo/"/>
     <id>http://kevin-li-06.github.io/2018/02/28/Hexo/</id>
