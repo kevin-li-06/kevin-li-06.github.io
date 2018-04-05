@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://kevin-li-06.github.io/2018/04/05/HashMap/Put-value3.png">
 <meta property="og:image" content="http://kevin-li-06.github.io/2018/04/05/HashMap/Put-value4.png">
 <meta property="og:image" content="http://kevin-li-06.github.io/2018/04/05/HashMap/Red-Black-Tree.png">
-<meta property="og:updated_time" content="2018-04-05T02:12:05.299Z">
+<meta property="og:updated_time" content="2018-04-05T03:00:57.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HashMap 原理">
 <meta name="twitter:description" content="Map，TreeMap是基于树的实现，HashMap，HashTable，ConcurrentHashMap是基于hash表的实现,下文我们会介绍hash表。HashTable和HashMap在代码实现上，基本上是一样的，和Vector与Arraylist的区别大体上差不多，一个是线程安全的，一个非线程安全.ConcurrentHashMap也是线程安全的，但性能比HashTable好很多，Ha">
@@ -365,6 +365,7 @@
       
         <p><img src="/2018/04/05/HashMap/Map-interface.png" alt="logo"></p>
 <p>Map，TreeMap是基于树的实现，HashMap，HashTable，ConcurrentHashMap是基于hash表的实现,下文我们会介绍hash表。HashTable和HashMap在代码实现上，基本上是一样的，和Vector与Arraylist的区别大体上差不多，一个是线程安全的，一个非线程安全.ConcurrentHashMap也是线程安全的，但性能比HashTable好很多，HashTable是锁整个Map对象，而ConcurrentHashMap是锁Map的部分结构，LinkedHashMap后续会单独开文讲解。</p>
+<p>ConcurrentHashMap是线程安全的，HashMap内部维护着一个Entry数组，而ConcurrentHashMap内部有一个Segment段，它将大的HashMap切分成若干个段（小的HashMap），然后让数据在每一段上Hash，这样多个线程在不同段上的Hash操作一定是线程安全的，所以只需要同步同一个段上的线程就可以了，这样实现了锁的分离，大大增加了并发量。ConcurrentHashMap的实现中还使用了不变模式final和volatile来保障线程安全</p>
 <p><img src="/2018/04/05/HashMap/Key-value.png" alt="logo"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package com.validate;</span><br><span class="line"></span><br><span class="line">import java.util.HashMap;</span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">public class HashMapTest &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Map&lt;String,Person&gt; personMap = new HashMap&lt;&gt;();</span><br><span class="line">		personMap.put(&quot;张三&quot;, new Person(&quot;张三&quot;,21));</span><br><span class="line">		personMap.put(&quot;李四&quot;, new Person(&quot;李四&quot;,21));</span><br><span class="line">		personMap.put(&quot;王五&quot;, new Person(&quot;王五&quot;,21));</span><br><span class="line">		personMap.put(&quot;赵六️&quot;, new Person(&quot;赵六&quot;,21));</span><br><span class="line">		personMap.put(&quot;孙七&quot;, new Person(&quot;孙七&quot;,21));</span><br><span class="line">		personMap.put(&quot;周八&quot;, new Person(&quot;周八&quot;,21));</span><br><span class="line">		personMap.put(&quot;钱九&quot;, new Person(&quot;钱九&quot;,21));</span><br><span class="line">		personMap.put(&quot;吴十&quot;, new Person(&quot;吴十&quot;,21));</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>初始化HashMap，成员变量table数组默认为null，size默认为0，负载因子为0.75f， 内存分析图</p>
@@ -434,6 +435,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/05/Centos/" rel="prev" title="Centos 安装">
+                Centos 安装 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -505,7 +510,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -518,7 +523,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
