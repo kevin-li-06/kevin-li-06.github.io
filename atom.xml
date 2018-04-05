@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kevin-li-06.github.io/"/>
-  <updated>2018-04-05T09:59:09.371Z</updated>
+  <updated>2018-04-05T13:40:45.008Z</updated>
   <id>http://kevin-li-06.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>环境配置</title>
+    <link href="http://kevin-li-06.github.io/2018/04/05/Environment/"/>
+    <id>http://kevin-li-06.github.io/2018/04/05/Environment/</id>
+    <published>2018-04-05T11:39:37.000Z</published>
+    <updated>2018-04-05T13:40:45.008Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>配置yum</li></ol><p>yum clean all<br>yum makecache<br>yum install wget</p><ol><li>安装JDK</li></ol><p>1、将jdk-7u60-linux-i586.rpm通过WinSCP上传到虚拟机中<br>2、安装JDK：rpm -ivh jdk-7u65-linux-i586.rpm<br>3、配置jdk相关的环境变量<br>vi .bashrc<br>export JAVA_HOME=/usr/java/latest<br>export PATH=$PATH:$JAVA_HOME/bin<br>source .bashrc<br>4、测试jdk安装是否成功：java -version</p><ol><li>安装Perl<br>yum install -y gcc</li></ol><p>wget <a href="http://www.cpan.org/src/5.0/perl-5.16.1.tar.gz" target="_blank" rel="noopener">http://www.cpan.org/src/5.0/perl-5.16.1.tar.gz</a><br>tar -xzf perl-5.16.1.tar.gz<br>cd perl-5.16.1<br>./Configure -des -Dprefix=/usr/local/perl<br>make &amp;&amp; make test &amp;&amp; make install<br>perl -v</p><ol><li>在4个虚拟机中安装CentOS集群</li></ol><p>（1）按照上述步骤，再安装三台一模一样环境的linux机器<br>（2）另外三台机器的hostname分别设置为eshop-cache02，eshop-cache03，eshop-cache04<br>（3）安装好之后，在每台机器的hosts文件里面，配置好所有的机器的ip地址到hostname的映射关系</p><p>比如说，在eshop-cache01的hosts里面</p><p>192.168.0.150 eshop-cache01<br>192.168.0.152 eshop-cache03<br>192.168.0.151 eshop-cache02<br>192.168.0.153 eshop-cache04</p><ol><li>配置4台CentOS为ssh免密码互相通信</li></ol><p>（1）首先在三台机器上配置对本机的ssh免密码登录<br>ssh-keygen -t rsa<br>生成本机的公钥，过程中不断敲回车即可，ssh-keygen命令默认会将公钥放在/root/.ssh目录下<br>cd /root/.ssh<br>cp id_rsa.pub authorized_keys<br>将公钥复制为authorized_keys文件，此时使用ssh连接本机就不需要输入密码了</p><p>测试：ssh eshop-cache01,ssh eshop-cache03,ssh  eshop-cache02,ssh eshop-cache04</p><p>成功</p><p>（2）接着配置三台机器互相之间的ssh免密码登录<br>使用ssh-copy-id -i hostname命令将本机的公钥拷贝到指定机器的authorized_keys文件中</p><p>Example</p><p>eshop-cache01 机器</p><p>ssh-copy-id -i eshop-cache02<br>ssh-copy-id -i eshop-cache03<br>ssh-copy-id -i eshop-cache04</p><p>eshop-cache02 机器</p><p>ssh-copy-id -i eshop-cache01<br>ssh-copy-id -i eshop-cache03<br>ssh-copy-id -i eshop-cache04</p><p>eshop-cache03 机器</p><p>ssh-copy-id -i eshop-cache01<br>ssh-copy-id -i eshop-cache02<br>ssh-copy-id -i eshop-cache04</p><p>eshop-cache04 机器</p><p>ssh-copy-id -i eshop-cache01<br>ssh-copy-id -i eshop-cache02<br>ssh-copy-id -i eshop-cache03</p><p>测试：</p><p>eshop-cache04 机器</p><p>ssh eshop-cache01 ，免密码直接登录</p><p>以上的步骤，还有一些简单的办法。借助SCP 远程拷贝命令</p><p>例如：</p><p>SCP authorized_keys eshop-cache02:/root/.ssh<br>SCP authorized_keys eshop-cache03:/root/.ssh<br>SCP authorized_keys eshop-cache04:/root/.ssh</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;配置yum&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;yum clean all&lt;br&gt;yum makecache&lt;br&gt;yum install wget&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;安装JDK&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;1、将jdk-7u60-linux-i586.rpm通
+      
+    
+    </summary>
+    
+    
+      <category term="environment" scheme="http://kevin-li-06.github.io/tags/environment/"/>
+    
+  </entry>
   
   <entry>
     <title>Ssh 服务器安装</title>
