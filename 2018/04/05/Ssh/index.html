@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Kevin&#39;s 博客">
 <meta property="og:description" content="1.查看SSH是否安装（检查是否装了SSH包）。 输入命令：rpm -qa | grep ssh  安装SSH 服务  yum install openssh-server 3.查看SSH服务是否正在运行。输入命令：/etc/init.d/sshd status 4.service sshd start）命令开启SSH服务；停止SSH服务命令（service sshd stop） 重启SSH服务命">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-05T14:10:56.972Z">
+<meta property="og:updated_time" content="2018-04-05T14:11:37.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ssh 服务器安装">
 <meta name="twitter:description" content="1.查看SSH是否安装（检查是否装了SSH包）。 输入命令：rpm -qa | grep ssh  安装SSH 服务  yum install openssh-server 3.查看SSH服务是否正在运行。输入命令：/etc/init.d/sshd status 4.service sshd start）命令开启SSH服务；停止SSH服务命令（service sshd stop） 重启SSH服务命">
@@ -361,9 +361,7 @@
 <p>3.查看SSH服务是否正在运行。<br>输入命令：/etc/init.d/sshd status</p>
 <p>4.service sshd start）命令开启SSH服务；停止SSH服务命令（service sshd stop）</p>
 <p>重启SSH服务命令（service sshd restart）</p>
-<ol>
-<li>查看启动22端口</li>
-</ol>
+<p>5.查看启动22端口</p>
 <p>netstat -antp | grep sshd 查看是否启动22端口]</p>
 <p>6.检查SSHD是否在本运行级别下设置为开机启动<br>输入命令：chkconfig –list sshd</p>
 <p>7.设置SSH服务为开机启动。<br>输入命令：chkconfig sshd on 即可。<br>注：若是chkconfig sshd off则禁止SSH开机启动。</p>
