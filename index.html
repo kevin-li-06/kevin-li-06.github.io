@@ -281,6 +281,140 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kevin-li-06.github.io/2018/04/05/Ssh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kevin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/32285?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kevin's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/05/Ssh/" itemprop="url">Ssh 服务器安装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T17:43:31+08:00">
+                2018-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.查看SSH是否安装（检查是否装了SSH包）。</p>
+<p>输入命令：rpm -qa | grep ssh</p>
+<ol>
+<li>安装SSH 服务</li>
+</ol>
+<p>yum install openssh-server</p>
+<p>3.查看SSH服务是否正在运行。<br>输入命令：/etc/init.d/sshd status</p>
+<p>4.service sshd start）命令开启SSH服务；停止SSH服务命令（service sshd stop）</p>
+<p>重启SSH服务命令（service sshd restart）</p>
+<ol>
+<li>查看启动22端口</li>
+</ol>
+<p>netstat -antp | grep sshd 查看是否启动22端口]</p>
+<p>6.检查SSHD是否在本运行级别下设置为开机启动<br>输入命令：chkconfig –list sshd</p>
+<p>7.设置SSH服务为开机启动。<br>输入命令：chkconfig sshd on 即可。<br>注：若是chkconfig sshd off则禁止SSH开机启动。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kevin-li-06.github.io/2018/04/05/ftp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -365,7 +499,7 @@
 <p>二、部署ftp服务器</p>
 <p>上面只是下载安装了ftp服务，下面是需要配置一下，才能正常使用。</p>
 <p>1、修改ftp服务器的配置文件，文件的默认位置是/etc/vsftpd/vsftpd.conf</p>
-<p>[root@localhost ~]# vim /etc/vsftpd/vsftpd.conf</p>
+<p>[root@localhost ~]# vi /etc/vsftpd/vsftpd.conf</p>
 <p>找到下面的三段，这三段是在一起的哦</p>
 <p>//chroot_list_enable=YES<br>// (default follows)<br>//chroot_list_file=/etc/vsftpd.chroot_list</p>
 <p>然后将上下两行的#号去掉，变成</p>
@@ -374,21 +508,22 @@
 <p>passwd ftpserver</p>
 <p>三、配置防火墙</p>
 <p>打开防火墙的配置文件，路径为/etc/sysconfig/iptables</p>
-<p>[root@localhost ~]# vim /etc/sysconfig/iptables</p>
+<p>[root@localhost ~]# vi /etc/sysconfig/iptables</p>
 <p>然后在中间增加下面一行代码</p>
 <p>-A INPUT -m state –state NEW -m tcp -p tcp –dport 21 -j ACCEPT</p>
 <p>保存和关闭文件，然后重启防火墙<br>[root@localhost ~]# service iptables restart</p>
 <p>[root@localhost ~]# getsebool -a |grep ftp</p>
 <p>这是selinux的问题，我们只要打开ftp_home_dir的值开启为on：，allow_ftpd_full_access也一同开启即可。</p>
 <p>[root@localhost ~]# setsebool -P ftp_home_dir 1<br>[root@localhost ~]# setsebool -P allow_ftpd_full_access 1<br>到此，应该解决问题了。</p>
+<p>四：关闭防火墙</p>
+<p>service iptables stop<br>service ip6tables stop<br>chkconfig iptables off<br>chkconfig ip6tables off</p>
 <p>关闭SELinux：</p>
-<p>1、临时关闭（不用重启机器）：</p>
-<p>setenforce 0                  ##设置SELinux 成为permissive模式</p>
-<pre><code>##setenforce 1 设置SELinux 成为enforcing模式
-</code></pre><p>2、修改配置文件需要重启机器：</p>
+<p>1、修改配置文件需要重启机器：</p>
 <p>修改/etc/selinux/config 文件</p>
 <p>将SELINUX=enforcing改为SELINUX=disabled</p>
 <p>重启机器即可</p>
+<p>四：如果500 OOPS: could not read chroot() list file:/etc/vsftpd/chroot_list ， 请在相应的目录创建空白的chroot_list</p>
+<p>vi chroot_list</p>
 
           
         
@@ -884,7 +1019,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

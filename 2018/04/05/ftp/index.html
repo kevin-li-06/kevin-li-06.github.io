@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Kevin&#39;s 博客">
 <meta property="og:description" content="1、用root 进入系统 2、使用命令 rpm  -qa|grep vsftpd 查看系统是否安装了ftp，若安装了vsftp，使用这个命令会在屏幕上显示vsftpd的版本  3、使用命令rpm -e vsftpd 即可卸载ftp 4、再使用rpm  -qa|grep vsftpd 查看系统是否已删除ftp，若删除成功，屏幕上显示vsftpd的版本 一：安装vsftpd 查看是否已经安装vsftp">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-05T08:52:24.337Z">
+<meta property="og:updated_time" content="2018-04-05T11:34:45.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ftp 服务器安装">
 <meta name="twitter:description" content="1、用root 进入系统 2、使用命令 rpm  -qa|grep vsftpd 查看系统是否安装了ftp，若安装了vsftp，使用这个命令会在屏幕上显示vsftpd的版本  3、使用命令rpm -e vsftpd 即可卸载ftp 4、再使用rpm  -qa|grep vsftpd 查看系统是否已删除ftp，若删除成功，屏幕上显示vsftpd的版本 一：安装vsftpd 查看是否已经安装vsftp">
@@ -365,7 +365,7 @@
 <p>二、部署ftp服务器</p>
 <p>上面只是下载安装了ftp服务，下面是需要配置一下，才能正常使用。</p>
 <p>1、修改ftp服务器的配置文件，文件的默认位置是/etc/vsftpd/vsftpd.conf</p>
-<p>[root@localhost ~]# vim /etc/vsftpd/vsftpd.conf</p>
+<p>[root@localhost ~]# vi /etc/vsftpd/vsftpd.conf</p>
 <p>找到下面的三段，这三段是在一起的哦</p>
 <p>//chroot_list_enable=YES<br>// (default follows)<br>//chroot_list_file=/etc/vsftpd.chroot_list</p>
 <p>然后将上下两行的#号去掉，变成</p>
@@ -374,21 +374,22 @@
 <p>passwd ftpserver</p>
 <p>三、配置防火墙</p>
 <p>打开防火墙的配置文件，路径为/etc/sysconfig/iptables</p>
-<p>[root@localhost ~]# vim /etc/sysconfig/iptables</p>
+<p>[root@localhost ~]# vi /etc/sysconfig/iptables</p>
 <p>然后在中间增加下面一行代码</p>
 <p>-A INPUT -m state –state NEW -m tcp -p tcp –dport 21 -j ACCEPT</p>
 <p>保存和关闭文件，然后重启防火墙<br>[root@localhost ~]# service iptables restart</p>
 <p>[root@localhost ~]# getsebool -a |grep ftp</p>
 <p>这是selinux的问题，我们只要打开ftp_home_dir的值开启为on：，allow_ftpd_full_access也一同开启即可。</p>
 <p>[root@localhost ~]# setsebool -P ftp_home_dir 1<br>[root@localhost ~]# setsebool -P allow_ftpd_full_access 1<br>到此，应该解决问题了。</p>
+<p>四：关闭防火墙</p>
+<p>service iptables stop<br>service ip6tables stop<br>chkconfig iptables off<br>chkconfig ip6tables off</p>
 <p>关闭SELinux：</p>
-<p>1、临时关闭（不用重启机器）：</p>
-<p>setenforce 0                  ##设置SELinux 成为permissive模式</p>
-<pre><code>##setenforce 1 设置SELinux 成为enforcing模式
-</code></pre><p>2、修改配置文件需要重启机器：</p>
+<p>1、修改配置文件需要重启机器：</p>
 <p>修改/etc/selinux/config 文件</p>
 <p>将SELINUX=enforcing改为SELINUX=disabled</p>
 <p>重启机器即可</p>
+<p>四：如果500 OOPS: could not read chroot() list file:/etc/vsftpd/chroot_list ， 请在相应的目录创建空白的chroot_list</p>
+<p>vi chroot_list</p>
 
       
     </div>
@@ -428,6 +429,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/05/Ssh/" rel="prev" title="Ssh 服务器安装">
+                Ssh 服务器安装 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -499,7 +504,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
