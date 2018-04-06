@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="eshop," />
 
 
 
@@ -81,13 +81,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kevin&#39;s 博客">
-<meta property="og:url" content="http://kevin-li-06.github.io/archives/2018/04/index.html">
+<meta name="description" content="1、安装单机版redis2、redis的生产环境启动方案3、redis cli的使用 1、安装单机版redis 大家可以自己去官网下载，当然也可以用课程提供的压缩包 wget http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gztar -xzvf tcl8.6.1-src.tar.gzcd  /usr/local/tcl8.6.1/uni">
+<meta name="keywords" content="eshop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生产环境Redis的安装">
+<meta property="og:url" content="http://kevin-li-06.github.io/2018/04/06/Redis/index.html">
 <meta property="og:site_name" content="Kevin&#39;s 博客">
+<meta property="og:description" content="1、安装单机版redis2、redis的生产环境启动方案3、redis cli的使用 1、安装单机版redis 大家可以自己去官网下载，当然也可以用课程提供的压缩包 wget http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gztar -xzvf tcl8.6.1-src.tar.gzcd  /usr/local/tcl8.6.1/uni">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-06T02:56:29.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kevin&#39;s 博客">
+<meta name="twitter:title" content="生产环境Redis的安装">
+<meta name="twitter:description" content="1、安装单机版redis2、redis的生产环境启动方案3、redis cli的使用 1、安装单机版redis 大家可以自己去官网下载，当然也可以用课程提供的压缩包 wget http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gztar -xzvf tcl8.6.1-src.tar.gzcd  /usr/local/tcl8.6.1/uni">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://kevin-li-06.github.io/archives/2018/04/"/>
+  <link rel="canonical" href="http://kevin-li-06.github.io/2018/04/06/Redis/"/>
 
 
 
 
 
-  <title>归档 | Kevin's 博客</title>
+  <title>生产环境Redis的安装 | Kevin's 博客</title>
   
 
 
@@ -142,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -266,259 +271,183 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kevin-li-06.github.io/2018/04/06/Redis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kevin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/32285?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kevin's 博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">生产环境Redis的安装</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T10:49:15+08:00">
+                2018-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 7 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/06/Redis/" itemprop="url">
-              
-                <span itemprop="name">生产环境Redis的安装</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-06T10:49:15+08:00"
-              content="2018-04-06" >
-          04-06
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/05/Environment/" itemprop="url">
-              
-                <span itemprop="name">环境配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-05T19:39:37+08:00"
-              content="2018-04-05" >
-          04-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/05/Ssh/" itemprop="url">
-              
-                <span itemprop="name">Ssh 服务器安装</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-05T17:43:31+08:00"
-              content="2018-04-05" >
-          04-05
-        </time>
-      </div>
-
-    </header>
-  </article>
+      
+        <p>1、安装单机版redis<br>2、redis的生产环境启动方案<br>3、redis cli的使用</p>
+<p>1、安装单机版redis</p>
+<p>大家可以自己去官网下载，当然也可以用课程提供的压缩包</p>
+<p>wget <a href="http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gz" target="_blank" rel="noopener">http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gz</a><br>tar -xzvf tcl8.6.1-src.tar.gz<br>cd  /usr/local/tcl8.6.1/unix/<br>./configure<br>make &amp;&amp; make install</p>
+<p>使用redis-3.2.8.tar.gz（截止2017年4月的最新稳定版）/usr/local/redis-3.2.8<br>tar -zxvf redis-3.2.8.tar.gzcd ..<br>cd redis-3.2.8<br>make &amp;&amp; make test &amp;&amp; make install</p>
+<p>2、redis的生产环境启动方案</p>
+<p>redis作为一个系统的daemon进程去运行的，每次系统启动，redis进程一起启动<br>（1）redis utils目录下，有个redis_init_script脚本<br>（2）将redis_init_script脚本拷贝到linux的/etc/init.d目录中，将redis_init_script重命名为redis_6379，6379是我们希望这个redis实例监听的端口号<br>（3）修改redis_6379脚本的第6行的REDISPORT，设置为相同的端口号（默认就是6379）<br>（4）创建两个目录：/etc/redis（存放redis的配置文件），/var/redis/6379（存放redis的持久化文件）<br>（5）修改redis配置文件（默认在redis的根目录下（/usr/local/redis-3.2.8），redis.conf），拷贝到/etc/redis目录中，修改名称为6379.conf<br>（6）修改redis.conf中的部分配置为生产环境</p>
+<p>daemonize    yes                            让redis以daemon进程运行<br>pidfile        /var/run/redis_6379.pid     设置redis的pid文件位置<br>port        6379                        设置redis的监听端口号<br>dir         /var/redis/6379                设置持久化文件的存储位置.  </p>
+<p>（7）启动redis，执行cd /etc/init.d, chmod 777 redis_6379，./redis_6379 start</p>
+<pre><code>如果运行./redis_6379 start ，发生如下错误./redis_6379: /bin/sh^M: bad interpreter，
 
 
+原因：
+
+   如果这个脚本在Windows下编辑过，就有可能被转换成Windows下的dos文本格式了，这样的格式每一行的末尾都是以\r\n来标识，它的ASCII码分别是0x0D，0x0A。如果你将 这个脚本文件直接放到Linux上执行就会报/bin/bash^M: bad interpreter错误提示。
+解决方法：
+
+首先你先要检查一下看看你的脚本文件是不是这个问题导致的，用vi命令打开要检查的脚本文件，然后用
+
+   :set ff?
+命令检查一下，看看是不是dos字样，如果是dos格式的，继续执行
+   :set ff=unix
+   然后执行
+   :qw
+   保存退出即可。
+</code></pre><p>（8）确认redis进程是否启动，ps -ef | grep redis</p>
+<p>（9）让redis跟随系统启动自动启动</p>
+<p> 在redis_6379脚本中，最上面，加入两行注释</p>
+<h1 id="chkconfig-2345-90-10"><a href="#chkconfig-2345-90-10" class="headerlink" title="chkconfig:   2345 90 10"></a>chkconfig:   2345 90 10</h1><h1 id="description-Redis-is-a-persistent-key-value-database"><a href="#description-Redis-is-a-persistent-key-value-database" class="headerlink" title="description:  Redis is a persistent key-value database"></a>description:  Redis is a persistent key-value database</h1><p> chkconfig redis_6379 on</p>
+<p>3、redis cli的使用</p>
+<p>redis-cli SHUTDOWN，连接本机的6379端口停止redis进程</p>
+<p>redis-cli -h 127.0.0.1 -p 6379 SHUTDOWN，制定要连接的ip和端口号</p>
+<p>redis-cli PING，ping redis的端口，看是否正常</p>
+<p>redis-cli，进入交互式命令行</p>
+<p>SET k1 v1<br>GET k1</p>
+<p>redis的技术，包括4块</p>
+<p>redis各种数据结构和命令的使用，包括java api的使用<br>redis一些特殊的解决方案的使用，pub/sub消息系统，分布式锁，输入的自动完成，等等<br>redis日常的管理相关的命令<br>redis企业级的集群部署和架构</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/05/ftp/" itemprop="url">
-              
-                <span itemprop="name">ftp 服务器安装</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-05T16:46:22+08:00"
-              content="2018-04-05" >
-          04-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/05/Centos/" itemprop="url">
-              
-                <span itemprop="name">Centos 安装</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-05T12:10:32+08:00"
-              content="2018-04-05" >
-          04-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/05/HashMap/" itemprop="url">
-              
-                <span itemprop="name">HashMap 原理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-05T09:24:21+08:00"
-              content="2018-04-05" >
-          04-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/eshop/" rel="tag"># eshop</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/05/Environment/" rel="next" title="环境配置">
+                <i class="fa fa-chevron-left"></i> 环境配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -526,6 +455,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -546,8 +479,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -619,6 +561,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#chkconfig-2345-90-10"><span class="nav-number">1.</span> <span class="nav-text">chkconfig:   2345 90 10</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#description-Redis-is-a-persistent-key-value-database"><span class="nav-number">2.</span> <span class="nav-text">description:  Redis is a persistent key-value database</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -759,6 +717,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
