@@ -352,7 +352,7 @@
       
         
           
-            <p>1、安装单机版redis<br>2、redis的生产环境启动方案<br>3、redis cli的使用</p>
+            <p>安装单机版redis<br>redis的生产环境启动方案<br>redis cli的使用</p>
 <p>1、安装单机版redis</p>
 <p>大家可以自己去官网下载，当然也可以用课程提供的压缩包</p>
 <p>wget <a href="http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gz" target="_blank" rel="noopener">http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gz</a><br>tar -xzvf tcl8.6.1-src.tar.gz<br>cd  /usr/local/tcl8.6.1/unix/<br>./configure<br>make &amp;&amp; make install</p>
@@ -380,7 +380,10 @@
 </code></pre><p>（8）确认redis进程是否启动，ps -ef | grep redis</p>
 <p>（9）让redis跟随系统启动自动启动</p>
 <p> 在redis_6379脚本中，最上面，加入两行注释</p>
-<h1 id="chkconfig-2345-90-10"><a href="#chkconfig-2345-90-10" class="headerlink" title="chkconfig:   2345 90 10"></a>chkconfig:   2345 90 10</h1><h1 id="description-Redis-is-a-persistent-key-value-database"><a href="#description-Redis-is-a-persistent-key-value-database" class="headerlink" title="description:  Redis is a persistent key-value database"></a>description:  Redis is a persistent key-value database</h1><p> chkconfig redis_6379 on</p>
+<p> chkconfig:   2345 90 10</p>
+<p> description:  Redis is a persistent key-value database</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">#</span><br><span class="line"># Simple Redis init.d script conceived to work on Linux systems</span><br><span class="line"># as it does use of the /proc filesystem.</span><br><span class="line"></span><br><span class="line"># chkconfig:   2345 90 10</span><br><span class="line"></span><br><span class="line"># description:  Redis is a persistent key-value database</span><br><span class="line"></span><br><span class="line">REDISPORT=6379</span><br><span class="line">EXEC=/usr/local/bin/redis-server</span><br><span class="line">CLIEXEC=/usr/local/bin/redis-cli</span><br><span class="line"></span><br><span class="line">PIDFILE=/var/run/redis_$&#123;REDISPORT&#125;.pid</span><br><span class="line">CONF=&quot;/etc/redis/$&#123;REDISPORT&#125;.conf&quot;</span><br></pre></td></tr></table></figure>
+<p> chkconfig redis_6379 on</p>
 <p>3、redis cli的使用</p>
 <p>redis-cli SHUTDOWN，连接本机的6379端口停止redis进程</p>
 <p>redis-cli -h 127.0.0.1 -p 6379 SHUTDOWN，制定要连接的ip和端口号</p>
