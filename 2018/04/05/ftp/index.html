@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Kevin&#39;s 博客">
 <meta property="og:description" content="1、用root 进入系统 2、使用命令 rpm  -qa|grep vsftpd 查看系统是否安装了ftp，若安装了vsftp，使用这个命令会在屏幕上显示vsftpd的版本  3、使用命令rpm -e vsftpd 即可卸载ftp 4、再使用rpm  -qa|grep vsftpd 查看系统是否已删除ftp，若删除成功，屏幕上显示vsftpd的版本 一：安装vsftpd 查看是否已经安装vsftp">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-05T14:10:46.599Z">
+<meta property="og:updated_time" content="2018-04-13T07:26:04.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ftp 服务器安装">
 <meta name="twitter:description" content="1、用root 进入系统 2、使用命令 rpm  -qa|grep vsftpd 查看系统是否安装了ftp，若安装了vsftp，使用这个命令会在屏幕上显示vsftpd的版本  3、使用命令rpm -e vsftpd 即可卸载ftp 4、再使用rpm  -qa|grep vsftpd 查看系统是否已删除ftp，若删除成功，屏幕上显示vsftpd的版本 一：安装vsftpd 查看是否已经安装vsftp">
@@ -388,7 +388,8 @@
 <p>修改/etc/selinux/config 文件</p>
 <p>将SELINUX=enforcing改为SELINUX=disabled</p>
 <p>重启机器即可</p>
-<p>四：如果500 OOPS: could not read chroot() list file:/etc/vsftpd/chroot_list ， 请在相应的目录创建空白的chroot_list</p>
+<p>2、chmod -R 777 /ftp</p>
+<p>五：如果500 OOPS: could not read chroot() list file:/etc/vsftpd/chroot_list ， 请在相应的目录创建空白的chroot_list</p>
 <p>vi chroot_list</p>
 
       

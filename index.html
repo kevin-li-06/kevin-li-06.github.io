@@ -826,7 +826,8 @@
 <p>修改/etc/selinux/config 文件</p>
 <p>将SELINUX=enforcing改为SELINUX=disabled</p>
 <p>重启机器即可</p>
-<p>四：如果500 OOPS: could not read chroot() list file:/etc/vsftpd/chroot_list ， 请在相应的目录创建空白的chroot_list</p>
+<p>2、chmod -R 777 /ftp</p>
+<p>五：如果500 OOPS: could not read chroot() list file:/etc/vsftpd/chroot_list ， 请在相应的目录创建空白的chroot_list</p>
 <p>vi chroot_list</p>
 
           
